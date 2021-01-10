@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import config.ConfigHelper;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,8 @@ import static com.codeborne.selenide.Selenide.open;
 public class GoogleSearchTest {
     @Test
     void selenideSearchTest() {
+        Configuration.remote = ConfigHelper.getWebdriverRemote();
+
         String searchSite = ConfigHelper.getSearchSite();
         //gradle test -Dsearch.site=https://google.com
         String searchItem = ConfigHelper.getSearchItem();
